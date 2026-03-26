@@ -1,0 +1,69 @@
+﻿
+  2026-03-26 22:06:14.299  
+INFO 31832 --- [           
+main] o.s.s.web.DefaultSecuri
+tyFilterChain     : Will not 
+secure Ant 
+[pattern='/admin/**']
+  2026-03-26 22:06:14.307  
+INFO 31832 --- [           
+main] o.s.s.web.DefaultSecuri
+tyFilterChain     : Will not 
+secure any request
+  2026-03-26 22:06:14.626  
+INFO 31832 --- [           
+main] o.s.b.a.w.s.WelcomePage
+HandlerMapping    : Adding 
+welcome page template: index
+> 2026-03-26 22:06:14.730  
+WARN 31832 --- [           
+main] ConfigServletWebServerA
+pplicationContext : 
+Exception encountered during 
+context initialization - 
+cancelling refresh attempt: o
+rg.springframework.beans.fact
+ory.BeanCreationException: 
+Error creating bean with 
+name 
+'cartLineItemRepository' 
+defined in com.freshcart.mark
+etplace.infrastructure.reposi
+tory.CartLineItemRepository 
+defined in 
+@EnableJpaRepositories 
+declared on JpaRepositoriesRe
+gistrar.EnableJpaRepositories
+Configuration: Cannot create 
+inner bean '(inner 
+bean)#58ba5b30' of type [org.
+springframework.orm.jpa.Share
+dEntityManagerCreator] while 
+setting bean property 
+'entityManager'; nested 
+exception is org.springframew
+ork.beans.factory.BeanCreatio
+nException: Error creating 
+bean with name '(inner 
+bean)#58ba5b30': Cannot 
+resolve reference to bean 
+'entityManagerFactory' while 
+setting constructor 
+argument; nested exception 
+is org.springframework.beans.
+factory.NoSuchBeanDefinitionE
+xception: No bean named 
+'entityManagerFactory' 
+available
+  2026-03-26 22:06:14.738  
+INFO 31832 --- [           
+main] o.apache.catalina.core.
+StandardService   : Stopping 
+service [Tomcat]
+  2026-03-26 22:06:14.750  
+INFO 31832 --- [           
+main] ConditionEvaluationRepo
+rtLoggingListener : 
+  
+
+
