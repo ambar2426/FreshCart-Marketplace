@@ -19,5 +19,5 @@ COPY --from=build /app/JtProject/target/marketplace-1.0.0.jar app.jar
 ENV PORT 8080
 EXPOSE 8080
 
-# Professional Startup Script
-ENTRYPOINT ["java", "-Dserver.port=${PORT}", "-jar", "app.jar"]
+# Professional Startup Script (Ensures PORT resolution)
+ENTRYPOINT ["sh", "-c", "java -Dserver.port=${PORT:8080} -jar app.jar"]
