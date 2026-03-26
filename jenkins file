@@ -1,0 +1,54 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven'
+        jdk 'JDK11'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir('JtProject') {
+                    bat 'mvn clean compile'
+                }
+            }
+        }
+
+        stage('Unit Tests') {
+            steps {
+                dir('JtProject') {
+                    bat 'mvn test'
+                }
+            }
+            post {
+                always {
+                    junit '**/target/surefire-reports/*.xml'
+                }
+            }
+        }
+
+        stage('Package') {
+            steps {
+                dir('JtProject') {
+                    bat 'mvn package -DskipTests'
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'FreshCart Marketplace build completed successfully.'
+        }
+        failure {
+            echo 'Build failed — check the logs above.'
+        }
+    }
+}
