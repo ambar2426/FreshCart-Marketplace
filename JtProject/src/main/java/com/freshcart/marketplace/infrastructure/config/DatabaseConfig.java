@@ -19,7 +19,7 @@ public class DatabaseConfig {
     @Value("${db.driver:org.h2.Driver}")
     private String driverClassName;
 
-    @Value("${db.url:jdbc:h2:mem:testdb}")
+    @Value("${db.url:jdbc:h2:file:/app/data/freshcart;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;MODE=MySQL}")
     private String jdbcUrl;
 
     @Value("${db.username:sa}")
